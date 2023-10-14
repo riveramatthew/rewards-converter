@@ -10,19 +10,19 @@ public class RewardValue {
         this.milesValue = theMilesValue;
     }
 
-    double getCashValue(){
-
-
-        return 0;
+    public double getCashValue(){
+        return this.cashValue;
     }
 
-    double getMilesValue() {
-
-
-        return 0;
+    public double getMilesValue() {
+        return this.milesValue;
     }
 
-    public static void main(String[] args) {
-        System.out.println("Test");
+    private int convertCash(double cashValue){
+        return 1;
+    }
+
+    private double convertMiles(int milesValue){
+        return 1;
     }
 }
