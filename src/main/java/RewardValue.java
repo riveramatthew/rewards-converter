@@ -1,31 +1,40 @@
 public class RewardValue {
-    // Declared the constants
-    private static final double MILES_TO_CASH_CONVERSION_RATE = 0.0035;
+    // Constants declaration
+    public static final double MILES_TO_CASH_CONVERSION_RATE = 0.0035;
+
     // Instance variables
-    private double cashValue;
-    private double milesValue;
+    private double cashValue; // Stores the cash value
+    private int milesValue; // Stores the miles value
 
-    // Constructor that accepts a cash value
+    // Constructor accepting cash value
     public RewardValue(double cashValue) {
-        this.cashValue = cashValue;
+        this.cashValue = cashValue; // Initialize cash value
+        this.milesValue = convertToMiles(cashValue); // Convert cash value to miles
     }
 
-    // Constructor that accepts a value in miles
+    // Constructor accepting miles value
     public RewardValue(int milesValue) {
-        this.milesValue = milesValue;
+        this.milesValue = milesValue; // Initialize miles value
+        this.cashValue = convertToCash(milesValue); // Convert miles value to cash
     }
 
-    // Method to get the cash value
+    // Method to convert miles to cash
+    private static double convertToCash(int milesValue) {
+        return milesValue * MILES_TO_CASH_CONVERSION_RATE;
+    }
+
+    // Method to convert cash to miles
+    private static int convertToMiles(double cashValue) {
+        return (int) (cashValue / MILES_TO_CASH_CONVERSION_RATE);
+    }
+
+    // Method to retrieve the cash value
     public double getCashValue() {
-        // Convert miles to cash
-        this.cashValue = this.milesValue * MILES_TO_CASH_CONVERSION_RATE;
-        return this.cashValue;
+        return cashValue;
     }
 
-    // Method to get the miles value
-    public double getMilesValue() {
-        // Assuming the cash value directly maps to miles using the conversion rate
-        this.milesValue = this.cashValue / MILES_TO_CASH_CONVERSION_RATE;
-        return this.milesValue;
+    // Method to retrieve the miles value
+    public int getMilesValue() {
+        return milesValue;
     }
 }
