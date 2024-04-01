@@ -6,4 +6,4 @@ JPMorgan Chase & Co. Software Engineering Lite virtual experience program on For
   •	Wrote a test suite for the class added.
 
 # Certificate of completion:
-[certificate jp morgan.pdf](https://github.com/Fayzulla-Shamsiev/rewards-converter/files/14826769/certificate.jp.morgan.pdf)
+https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/Wb4yEmHvZrC2qxiyX_JPMorgan%20Chase%20&%20Co._mrNiNHXrygnuTNenT_1711991733642_completion_certificate.pdf
