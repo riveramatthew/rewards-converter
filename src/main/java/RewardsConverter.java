@@ -19,7 +19,7 @@ public class RewardsConverter {
     }
 }
 
-class RewardValue {
+public class RewardValue {
     private double cashValue;
     private double milesValue;
 
