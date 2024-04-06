@@ -2,9 +2,8 @@
  * A class for RewardValue which will convert miles into a cash value and visa versa.
  */
 public class RewardValue {
-  private int miles;
-  private double cashValue;
-  private double conversion_rate = 0.0035;
+  private final double cashValue;
+  private static final double CONVERSION_RATE = 0.0035;
 
   /**
    * Creates a RewardValue object given a cash value.
@@ -13,7 +12,6 @@ public class RewardValue {
    */
   public RewardValue(double cash) {
     this.cashValue = cash;
-    this.miles = (int)(this.getCashValue() * (1/conversion_rate));
   }
 
   /**
@@ -22,8 +20,27 @@ public class RewardValue {
    * @param miles a miles value of type int
    */
   public RewardValue(int miles) {
-    this.miles = miles;
-    this.cashValue = this.getMilesValue() * conversion_rate;
+    this.cashValue = convertToCash(miles);
+  }
+
+  /**
+   * Returns the cash equivalent to the passed miles value.
+   * 
+   * @param miles a miles value of type int
+   * @return the cash value
+   */
+  private static double convertToCash(int miles) {
+    return miles * CONVERSION_RATE;
+  }
+
+  /**
+   * Returns the miles equivalent to the passed cash value.
+   * 
+   * @param cash a cash value of type double
+   * @return the miles value
+   */
+  private static int convertToMiles(double cash) {
+    return (int)(cash / CONVERSION_RATE);
   }
 
   /**
@@ -41,34 +58,6 @@ public class RewardValue {
    * @return the miles value of type int
    */
   public int getMilesValue() {
-    return this.miles;
-  }
-
-  /**
-   * Setter method for the object's miles value.
-   * 
-   * @param miles an updated value for miles
-   * @return a boolean indicating a successful update of the miles value.
-   */
-  public boolean setMilesValue(int miles) {
-    if (miles < 0) {
-      return false;
-    }
-    this.miles = miles;
-    return true;
-  }
-
-  /**
-   * Setter method for the object's cash value.
-   * 
-   * @param cash an updated value for cash
-   * @return a boolean indicating a successful update of the cash value.
-   */
-  public boolean setCashValue(double cash) {
-    if (cash < 0) {
-      return false;
-    }
-    this.cashValue = cash;
-    return true;
+    return convertToMiles(this.cashValue);
   }
 }
