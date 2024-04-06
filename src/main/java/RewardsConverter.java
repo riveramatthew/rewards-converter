@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class RewardsConverter {
     public static void main(String[] args) {
-        var scanner = new Scanner(System.in);
         System.out.println("Welcome to the Credit Card Rewards Converter!");
         System.out.println("Please enter a cash value to convert to airline miles: ");
-        var input_value = scanner.nextLine();
+        @SuppressWarnings("resource")
+        var input_value = new Scanner(System.in).nextLine();
         double cashValue;
         try {
             cashValue = Double.parseDouble(input_value);
