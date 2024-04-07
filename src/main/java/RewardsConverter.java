@@ -1,23 +1,6 @@
 import java.util.Scanner;
-class RewardValue{
-    private double cash;
-    private double miles;
 
-    public RewardValue(double miles){
-        this.miles =miles;
-        this.cash =miles*0.0035;
-    }
-    public RewardValue(double cash){
-        this.cash =cash;
-        this.miles =cash*0.0035;
-    }
-    public getMilesValue(){
-        return this.miles;
-    }
-    public getCashValue(){
-        return this.cash;
-    }
-};
+;
 public class RewardsConverter {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
