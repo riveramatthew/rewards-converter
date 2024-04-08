@@ -9,10 +9,13 @@ public class RewardValue {
     }
 
     //constructor that accepts a value in miles
-    public RewardValue(double milesValue, boolean isMiles) {
+    public RewardValue(double value, boolean isMiles) {
         if (isMiles) { //the boolean parameter distinguishes this constructor
-            this.milesValue = milesValue;
-            this.cashValue = milesValue * 0.0035; //converts miles to cash
+            this.milesValue = value;
+            this.cashValue = value * 0.0035; //converts miles to cash
+        } else {
+            this.cashValue = value;
+            this.milesValue = value / 0.0035; //converts cash to miles
         }
     }
 
