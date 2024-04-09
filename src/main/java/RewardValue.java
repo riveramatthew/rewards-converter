@@ -1,20 +1,20 @@
 public class RewardValue
 {
-    private final double CashValue;
-    private final float Arline_Miles;
+    private double CashValue;
+    private float Arline_Miles;
 
     public RewardValue(double CashValue)
     {
         this.CashValue = CashValue;
         // converting cash to miles
-        this.Arline_Miles = (float)(this.CashValue / 0.0035);
+        convert_from_cash_to_miles();
     }
 
     public RewardValue(float Air_miles)
     {
         this.Arline_Miles = Air_miles;
         // converting miles to cash
-        this.CashValue = this.Arline_Miles*0.0035;
+        convert_from_miles_to_cash();
     }
 
     public float getMilesValue()
@@ -25,5 +25,15 @@ public class RewardValue
     public double getCashValue()
     {
         return this.CashValue;
+    }
+
+    public void convert_from_cash_to_miles()
+    {
+        this.Arline_Miles = (float)(this.CashValue / 0.0035);
+    }
+
+    public void convert_from_miles_to_cash()
+    {
+        this.CashValue = this.Arline_Miles*0.0035;
     }
 }
