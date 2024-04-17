@@ -7,17 +7,17 @@ public class RewardValue {
 
     public RewardValue(double val){
         this.cash = val;
+    }
+
+    public RewardValue(int val){
         this.miles = val;
     }
 
 
-//    public RewardValue(double convert) {
-//        double new_val = convert;
-//    }
     public double getCashValue() {
         return (this.miles*0.0035);
     }
-    public double getMilesValue() {
-        return (this.cash/0.0035);
+    public int getMilesValue() {
+        return (int)(this.cash/0.0035);
     }
 }
