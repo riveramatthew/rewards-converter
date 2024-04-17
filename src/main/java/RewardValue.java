@@ -1,9 +1,6 @@
 public class RewardValue {
-//    public static void main(String[] args){
-//
-//    }
+
     private final double cash;
-    private double miles;
 
     public RewardValue(double cash){
         this.cash = cash;
