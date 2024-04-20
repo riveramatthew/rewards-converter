@@ -1,6 +1,6 @@
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 public class RewardValueTests {
 
@@ -20,11 +20,30 @@ public class RewardValueTests {
 
     @Test
     void convert_from_cash_to_miles() {
-        assert false;
+        double cashValue = 10.0;
+        double CONVERSION_RATE = 0.0035; // Conversion rate (miles per dollar)
+        int expectedMiles = (int) Math.round(cashValue / CONVERSION_RATE);
+    
+        RewardValue reward = new RewardValue(cashValue);
+        int actualMiles = reward.getMilesValue(); // This might not directly calculate miles
+    
+    
+        assertEquals(expectedMiles, actualMiles);
     }
 
     @Test
     void convert_from_miles_to_cash() {
-        assert false;
+        
+        int milesValue=100;
+        double CONVERSION_RATE = 0.0035;
+
+        double expectedcash = milesValue * CONVERSION_RATE;
+
+        RewardValue reward = new RewardValue(milesValue);
+        double actualcash = reward.getCashValue();
+
+        assertEquals(expectedcash, actualcash);
+
+
     }
 }
