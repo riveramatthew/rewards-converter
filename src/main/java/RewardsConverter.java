@@ -5,13 +5,12 @@ class RewardValue{
 
     public RewardValue(double cashValue) {
         this.cashValue = cashValue;
-        this.milesValue = cashValue / 0.0035; // Conversion rate from cash to miles
+        this.milesValue = cashValue * 0.0035;
     }
 
-    // Constructor accepting miles value
     public RewardValue(int milesValue) {
         this.milesValue = milesValue;
-        this.cashValue = milesValue * 0.0035; // Conversion rate from miles to cash
+        this.cashValue = milesValue / 0.0035;
     }
     public double getCashValue(){
         return cashValue;
