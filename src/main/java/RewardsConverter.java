@@ -1,5 +1,25 @@
 import java.util.Scanner;
+class RewardValue{
+    private double cashValue;
+    private double milesValue;
 
+    public RewardValue(double cashValue) {
+        this.cashValue = cashValue;
+        this.milesValue = cashValue / 0.0035; // Conversion rate from cash to miles
+    }
+
+    // Constructor accepting miles value
+    public RewardValue(int milesValue) {
+        this.milesValue = milesValue;
+        this.cashValue = milesValue * 0.0035; // Conversion rate from miles to cash
+    }
+    public double getCashValue(){
+        return cashValue;
+    }
+    public double getMilesValue(){
+        return milesValue;
+    }
+}
 public class RewardsConverter {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
