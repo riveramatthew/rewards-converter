@@ -1,3 +1,8 @@
+/**
+ * RewardValue class created by Stephanie Bernades (StephyB-97) on April 22, 2024.
+ * Represents a reward value with methods to convert between cash and miles.
+ */
+
 public class RewardValue {
     private double cash;
     private int miles;
