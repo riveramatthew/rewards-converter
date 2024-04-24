@@ -1,30 +1,31 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RewardValueTests {
 
     @Test
-    void create_with_cash_value() {
-        double cashValue = 100;
-        var rewardValue = new RewardValue(cashValue);
-        assertEquals(cashValue, rewardValue.getCashValue());
+    void testCashToMilesConversion() {
+        // Given
+        double cashValue = 100.0;
+        double expectedMiles = cashValue / 0.0035; // expected miles
+
+        // When
+        RewardValue rewardValue = new RewardValue(cashValue);
+
+        // Then
+        assertEquals(expectedMiles, rewardValue.getMilesValue(), 0.0001); // accurate conversion
     }
 
     @Test
-    void create_with_miles_value() {
-        int milesValue = 10000;
-        var rewardValue = new RewardValue(milesValue);
-        assertEquals(milesValue, rewardValue.getMilesValue());
-    }
+    void testMilesToCashConversion() {
+        // Given
+        double milesValue = 10000.0;
+        double expectedCash = milesValue * 0.0035; // expected cash
 
-    @Test
-    void convert_from_cash_to_miles() {
-        assert false;
-    }
+        // When
+        RewardValue rewardValue = new RewardValue(milesValue);
 
-    @Test
-    void convert_from_miles_to_cash() {
-        assert false;
+        // Then
+        assertEquals(expectedCash, rewardValue.getCashValue(), 0.01); // accurate conversion
     }
 }
