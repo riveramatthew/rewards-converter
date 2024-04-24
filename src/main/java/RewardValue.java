@@ -11,13 +11,13 @@ public class RewardValue {
     //Constructor that accepts cash value
     RewardValue(double cash){
         this.cash = cash;
-        this.miles = (int)(cash / fixed_rate);
+        this.miles = convertCashToMiles();
     }
 
     //constructor that accepts miles values
     RewardValue(int miles){
         this.miles = miles;
-        this.cash = miles * fixed_rate;
+
     }
 
     //Method to get cash value
@@ -30,6 +30,10 @@ public class RewardValue {
         return this.miles;
     }
 
+    //Method to convert cash value to airLine miles
+    public int convertCashToMiles(){
+        return (int) (cash / fixed_rate);
+    }
 
 
 }
