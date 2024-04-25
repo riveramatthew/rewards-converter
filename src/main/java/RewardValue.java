@@ -35,5 +35,9 @@ public class RewardValue {
         return (int) (cash / fixed_rate);
     }
 
+   //Method to convert miles to cash value
+    public double convertMilesToCash(){
+        return miles * fixed_rate;
+    }
 
 }
