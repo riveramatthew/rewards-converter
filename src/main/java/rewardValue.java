@@ -13,7 +13,7 @@ public class RewardValue {
     // Constructor accepting miles value
     public RewardValue(int milesValue) {
         this.milesValue = milesValue;
-        this.cashValue = milesValue * 0.0035; // Convert miles value to cash
+        this.cashValue =  milesValue * 0.0035; // Convert miles value to cash
     }
 
     // Getter method for cash value
