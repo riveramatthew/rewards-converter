@@ -9,13 +9,13 @@ public class RewardValue {
         this.milesValue = cashValue * 0.0035;
     }
 
-    public RewardValue(double milesValue, boolean isMiles) {
+    public RewardValue(double value, boolean isMiles) {
         if (isMiles) {
-            this.milesValue = milesValue;
-            this.cashValue = milesValue / 0.0035;
+            this.milesValue = value;
+            this.cashValue = Math.round(value / 0.0035 * 100.0) / 100.0;
         } else {
-            this.cashValue = milesValue;
-            this.milesValue = cashValue * 0.0035;
+            this.cashValue = value;
+            this.milesValue = Math.round(value * 0.0035 * 100.0) / 100.0;
         }
     }
 
@@ -25,5 +25,13 @@ public class RewardValue {
 
     public double getMilesValue() {
         return milesValue;
+    }
+
+    public double convertCashToMiles() {
+        return cashValue * 0.0035;
+    }
+
+    public double convertMilesToCash() {
+        return milesValue / 0.0035;
     }
 }
