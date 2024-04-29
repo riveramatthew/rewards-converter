@@ -1,20 +1,48 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class RewardsConverter {
-    public static void main(String[] args) {
-        var scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Credit Card Rewards Converter!");
-        System.out.println("Please enter a cash value to convert to airline miles: ");
-        var input_value = scanner.nextLine();
-        double cashValue;
-        try {
-            cashValue = Double.parseDouble(input_value);
-        } catch (NumberFormatException exception) {
-            System.out.println("Could not parse input value as a double, exiting");
-            return;
-        }
-        System.out.println("converting $" + input_value + " to miles");
-        var rewardsValue = new RewardValue(cashValue);
-        System.out.println("$" + input_value + " is worth " + rewardsValue.getMilesValue() + " miles");
+class RewardValue
+{
+    int cashInt = 0;
+    int milesInt = 0;
+    double conversionRate = 0.0035;
+    double milesConversionTotal = 0;
+    double cashConversionTotal = 0;
+    
+    public static void main (String[]args)
+    {
+        RewardValue myClass = new RewardValue();
+        
+        myClass.getCashValue();
+        myClass.getMilesValue();
+        myClass.convertCashValue();
+        myClass.convertMilesValue();        
+    }
+    
+    public void getCashValue()
+    {
+        System.out.println("Enter cash value: ");
+        Scanner cashEntry = new Scanner(System.in);
+        String cash = cashEntry.nextLine();
+        cashInt = Integer.parseInt(cash);
+    }
+    
+    public void getMilesValue()
+    {
+        System.out.println("Enter miles value: ");
+        Scanner milesEntry = new Scanner(System.in);
+        String miles = milesEntry.nextLine();
+        milesInt = Integer.parseInt(miles);
+    }
+    
+    public void convertCashValue()
+    {
+        cashConversionTotal = milesInt * conversionRate;
+        System.out.println(milesInt + " miles would get be " + "£" + cashConversionTotal);
+    }
+    
+    public void convertMilesValue()
+    {
+        milesConversionTotal = cashInt / conversionRate;
+        System.out.println("£" + cashInt + " would get you " + milesConversionTotal + " miles");
     }
 }
