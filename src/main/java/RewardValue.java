@@ -1,5 +1,6 @@
 public class RewardValue
 {
+    //Attributes
     private double cashValue;
     private int milesValue;
 
