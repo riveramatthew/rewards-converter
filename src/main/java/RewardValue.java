@@ -2,28 +2,34 @@ import java.util.Scanner;
 
 public class RewardValue{
 
-	double cash;
-	int miles;
-	double conversion;
+	private double cash;
+	private int miles;
+	public static double conversion = 0.0035;
 	
 	public RewardValue(double cash){
 		this.cash = cash;
-		this.conversion = 0.0035;
 	}
 
 	public RewardValue(int miles){
 		this.miles = miles;
-		this.conversion = 0.0035;
+		this.cash = convertToCash(miles);
+	}
+
+	private double convertToCash(int miles){
+		return miles * conversion;
+	}
+
+	private int convertToMiles(double cash){
+		return (int) (cash / conversion);
 	}
 
 	public double getCashValue(){
-		double cash = miles * conversion;
-		return cash;
+		return this.cash;
 
 	}
 
-	public double getMilesValue(){
-		return cash / conversion;
+	public int getMilesValue(){
+		return convertToMiles(this.cash);
 	}
 
 }
