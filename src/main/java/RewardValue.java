@@ -8,25 +8,18 @@ public class RewardValue {
     public RewardValue(double cashValue) {
         //Set the cash value provided as an input
         this.cashValue = cashValue;
+    }
+        public RewardValue(int milesValue) {
         //Calculates the miles value based on the cash value
-        this.milesValue = (int) (cashValue /0.0035); //converts cash value to miles value
+        this.milesValue =milesValue;
     }
 
-    //constructore accepting miles value
-    public RewardValue(int milesValue) {
-        //Set the miles value provided as an input
-        this.milesValue = milesValue;
-        //Calculates the cash value based on the miles value
-        this.cashValue = milesValue * 0.0035; //converts miles value to cash value
-    }
-    //method to get the miles value
-    public double getMilesValue() {
-        return cashValue * 100;
-    }
-
-    //method to get the cash value
+    //getter method to get the cash value
     public double getCashValue() {
         return cashValue;
+    }
+    public int getMilesValue() {
+        return milesValue;
     }
 
 }
