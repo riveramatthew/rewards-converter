@@ -1,5 +1,3 @@
-import java.text.DecimalFormat;
-
 public class RewardValue {
     private double cashValue;
     private double milesValue;
@@ -16,8 +14,8 @@ public class RewardValue {
             this.milesValue = milesValue;
             this.cashValue = convertMilesToCash(milesValue);
         } else {
-            this.cashValue = milesValue;
-            this.milesValue = convertCashToMiles(milesValue);
+            this.cashValue = milesValue / 0.0035; // Convert miles to cash
+            this.milesValue = milesValue;
         }
     }
 
@@ -41,23 +39,5 @@ public class RewardValue {
     // Getter for miles value
     public double getMilesValue() {
         return milesValue;
-    }
-
-    // Main method for testing
-    public static void main(String[] args) {
-        java.util.Scanner scanner = new java.util.Scanner(System.in);
-        System.out.println("Please enter a cash value to convert to airline miles: ");
-        double cashAmount = scanner.nextDouble();
-
-        RewardValue reward = new RewardValue(cashAmount);
-        DecimalFormat df = new DecimalFormat("#.##");
-        System.out.println("Converting $" + cashAmount + " to miles");
-        System.out.println("$" + cashAmount + " is worth " + df.format(reward.getMilesValue()) + " miles.");
-
-        // Example conversion from miles to cash
-        System.out.println("Please enter a miles value to convert to cash: ");
-        double milesAmount = scanner.nextDouble();
-        RewardValue reward2 = new RewardValue(milesAmount, true);
-        System.out.println(milesAmount + " miles is worth $" + df.format(reward2.getCashValue()) + ".");
     }
 }
