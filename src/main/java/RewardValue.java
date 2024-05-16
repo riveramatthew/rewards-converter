@@ -10,4 +10,11 @@ public class RewardValue {
         this.miles = miles;
     }
 
+    public double getCashValue() {
+        return cash;
+    }
+
+    public double getMilesValue() {
+        return miles;
+    }
 }
