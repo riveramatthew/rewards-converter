@@ -1,8 +1,8 @@
 package main.java;
 
 public class RewardValue {
-    private double cashValue;
-    private int milesValue;
+    private final double cashValue;
+    private final int milesValue;
 
     // Constructor that accepts a cash value
     public RewardValue(double cashValue) {
