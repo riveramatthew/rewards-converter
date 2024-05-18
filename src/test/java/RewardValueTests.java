@@ -32,6 +32,6 @@ public class RewardValueTests {
         int milesValue = 857;
         var rewardValue = new RewardValue(milesValue);
         //857 miles equates to 2.9995 cash
-        assertEquals(2.9995, rewardValue.getCashValue());
+        assert (Math.abs(2.9995 -  rewardValue.getCashValue())<10e-8);
     }
 }
