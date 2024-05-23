@@ -9,22 +9,30 @@ public class RewardValueTests {
         double cashValue = 100;
         var rewardValue = new RewardValue(cashValue);
         assertEquals(cashValue, rewardValue.getCashValue());
+        assertEquals(cashValue / 0.0035, rewardValue.getMilesValue());
     }
 
     @Test
     void create_with_miles_value() {
-        int milesValue = 10000;
-        var rewardValue = new RewardValue(milesValue);
+        double milesValue = 20000;
+        var rewardValue = new RewardValue(milesValue,true );
         assertEquals(milesValue, rewardValue.getMilesValue());
+        assertEquals(milesValue * 0.0035, rewardValue.getCashValue());
     }
 
     @Test
     void convert_from_cash_to_miles() {
-        assert false;
+        double cashValue = 100;
+        RewardValue rewardValue = new RewardValue(cashValue);
+        double expectedMiles = cashValue / 0.0035;
+        assertEquals(expectedMiles, rewardValue.getMilesValue());
     }
 
     @Test
     void convert_from_miles_to_cash() {
-        assert false;
+        double milesValue = 20000;
+        RewardValue rewardValue = new RewardValue(milesValue, true);
+        double expectedCash = milesValue * 0.0035;
+        assertEquals(expectedCash, rewardValue.getCashValue());
     }
 }
