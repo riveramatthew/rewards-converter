@@ -1,15 +1,15 @@
 public class RewardValue {
     /**
-     * The "value" of the RewardValue object, stored in miles and converted to cash when needed.
+     * The "value" of the RewardValue object, stored in cash and converted to miles when needed.
      */
-    private int miles;
+    private double cash;
 
     /**
      * Creates a new RewardValue object given an amount of miles.
      * @param miles The amount of miles for the RewardValue to be initialized with.
      */
     public RewardValue(int miles) {
-        this.miles = miles;
+        cash = miles * 0.0035;
     }
 
     /**
@@ -17,21 +17,21 @@ public class RewardValue {
      * @param cash The cash value for the RewardValue to be initialized with.
      */
     public RewardValue(double cash) {
-        miles = (int) (cash * (1/0.0035));
+        this.cash = cash;
     }
 
     /**
-     * @return the amount of miles the RewardValue is worth.
+     * @return the miles value of the RewardValue, converted from cash.
      */
     public int getMilesValue() {
-        return miles;
+        return (int) (cash / 0.0035);
     }
 
     /**
-     * @return the cash value of the RewardValue, converted from miles.
+     * @return the cash value of the RewardValue.
      */
     public double getCashValue() {
-        return 0.0035 * miles;
+        return cash;
     }
 
 }
