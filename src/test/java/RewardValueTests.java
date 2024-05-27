@@ -19,7 +19,7 @@ public class RewardValueTests {
         assertEquals(milesValue, rewardValue.getMilesValue());
     }
 
-    /* test conversion from cash value to miles value */
+    /*test conversion from cash value to miles value*/
     @Test
     void convert_from_cash_to_miles() {
         double cash=100;
@@ -30,7 +30,7 @@ public class RewardValueTests {
         //assert false;
     }
 
-    /* test conversion from miles value to cash value */
+    /*test conversion from miles value to cash value*/
     @Test
     void convert_from_miles_to_cash() {
         int mile=100;
