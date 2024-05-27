@@ -1,6 +1,6 @@
 public class RewardValue {
     
-    private static final double MILES_TO_CASH_RATE = 0.0035;
+    public static final double MILES_TO_CASH_RATE = 0.0035;
     private double cashValue;
     private int milesValue;
     
