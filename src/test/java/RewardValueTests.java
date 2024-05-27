@@ -1,3 +1,4 @@
+/* author: Nandika Taneja  tanejanandika@gmail.com*/
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,13 +19,24 @@ public class RewardValueTests {
         assertEquals(milesValue, rewardValue.getMilesValue());
     }
 
+    /* test conversion from cash value to miles value */
     @Test
     void convert_from_cash_to_miles() {
-        assert false;
+        double cash=100;
+        int mile= (int) (cash/0.0035);
+        var rewardValue=new RewardValue(cash);
+        assertEquals(mile,rewardValue.getMilesValue());
+
+        //assert false;
     }
 
+    /* test conversion from miles value to cash value */
     @Test
     void convert_from_miles_to_cash() {
-        assert false;
+        int mile=100;
+        double cash= mile*0.0035;
+        var rewardValue=new RewardValue(mile);
+        assertEquals(cash,rewardValue.getCashValue());
+        //assert false;
     }
 }
