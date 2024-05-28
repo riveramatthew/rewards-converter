@@ -1,14 +1,14 @@
 public class RewardValue {
-    private double cashValue;
-    private double milesValue;
+    private final double cashValue;
+    private final double milesValue;
 
     public RewardValue(double cashValue) {
         this.cashValue = cashValue;
-        // Calculate milesValue based on a conversion formula
-        this.milesValue = cashValue * 100; // For example, 100 miles per dollar
+        this.milesValue = cashValue * 100; // Assuming a conversion rate of 100 miles per dollar
     }
 
     public double getMilesValue() {
         return milesValue;
     }
 }
+
