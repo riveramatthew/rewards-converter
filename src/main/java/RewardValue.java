@@ -3,7 +3,6 @@ public class RewardValue {
     private final double cashValue;
     public static final double CONVERT_MILE_TO_CASH_RATE = 0.0035;
 
-
     public RewardValue(double cashValue) {
         this.cashValue= cashValue;
     }
