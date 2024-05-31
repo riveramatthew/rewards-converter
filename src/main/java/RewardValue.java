@@ -29,4 +29,11 @@ public class RewardValue {
     public double getMilesValue() {
         return milesValue;
     }
+    public static double convertCashToMiles(double cashValue) {
+        return cashValue * 10.0;
+    }
+
+    public static double convertMilesToCash(int milesValue) {
+        return milesValue / 10;
+    }
 }
