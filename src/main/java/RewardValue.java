@@ -1,7 +1,7 @@
 public class RewardValue {
 
     // Conversion rate
-    private double MILES_TO_CASH = 0.0035;
+    public final double MILES_TO_CASH = 0.0035;
 
     // Instance variables
     private double CashValue = 0.0;
