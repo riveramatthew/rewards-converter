@@ -14,13 +14,21 @@ public class RewardValue {
 
     }
 
+    public double convertCashToMiles(){
+        return cash / milesToCash;
+    }
+
+    public double convertMilesToCash(){
+        return miles*milesToCash;
+    }
+
     public double getCashValue(){
-        return miles * milesToCash;
+        return cash;
 
     }
 
     public double getMilesValue(){
-        return cash / milesToCash;
+       return miles;
 
     }
 
