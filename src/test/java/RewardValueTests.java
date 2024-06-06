@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RewardValueTests {
@@ -20,11 +19,15 @@ public class RewardValueTests {
 
     @Test
     void convert_from_cash_to_miles() {
-        assert false;
+        double cashValue = 350;
+        var rewardValue = new RewardValue(cashValue);
+        assertEquals(100000, rewardValue.convertCashToMiles());
     }
 
     @Test
     void convert_from_miles_to_cash() {
-        assert false;
+        int miles = 1000;
+        var rewardValue = new RewardValue(miles);
+        assertEquals(3.5, rewardValue.convertMilesToCash());
     }
 }
