@@ -8,10 +8,16 @@ public class RewardValue{
         this.milesValue=milesValue;
     }
     public double getCashValue(){
+        if (milesValue==0 && cashValue!=0){
+            return cashValue;
+        }
         cashValue = (double)(milesValue*0.0035);
         return cashValue;
     }
     public int getMilesValue(){
+        if (cashValue==0 && milesValue!=0){
+            return milesValue;
+        }
         milesValue = (int)(cashValue/0.0035);
         return milesValue;
     }
