@@ -11,11 +11,11 @@ public class RewardValue {
     }
 
     private static int convertToMiles(double cashValue) {
-        return (int) (cashValue * MILES_TO_CASH_CONVERSION_RATE);
+        return (int) (cashValue / MILES_TO_CASH_CONVERSION_RATE);
     }
 
     private static double convertToCash(int milesValue) {
-        return milesValue / MILES_TO_CASH_CONVERSION_RATE;
+        return milesValue * MILES_TO_CASH_CONVERSION_RATE;
     }
 
     public double getCashValue() {
