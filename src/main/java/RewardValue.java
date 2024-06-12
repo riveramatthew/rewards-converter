@@ -25,6 +25,14 @@ public class RewardValue {
         return milesValue;
     }
 
+    public double fromCashToMiles() {
+        return cashValue / MILES_TO_CASH_RATE;
+    }
+
+    public double fromMilesToCash() {
+        return milesValue * MILES_TO_CASH_RATE;
+    }
+
     public static void main(String[] args) {
         // Testing the class
         RewardValue cashReward = new RewardValue(100);
