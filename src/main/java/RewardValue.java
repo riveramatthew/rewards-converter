@@ -1,29 +1,29 @@
-package main.java;
-
 public class RewardValue {
-    private static final double MILES_TO_CASH_CONVERSION_RATE = 0.0035;
-    private double cashValue;
-    private double milesValue;
+    private final double cash;
+    private final double miles;
 
-    
-    public RewardValue(double cashValue) {
-        this.cashValue = cashValue;
-        this.milesValue = cashValue / MILES_TO_CASH_CONVERSION_RATE;
+    // Conversion rate from miles to cash
+    private static final double MCRate = 0.0035;
+
+    // Constructor that accepts a cash value
+    public RewardValue(double cash) {
+        this.cash = cash;
+        this.miles = cash / MCRate;
     }
 
- 
-    public RewardValue(int milesValue) {
-        this.milesValue = milesValue;
-        this.cashValue = milesValue * MILES_TO_CASH_CONVERSION_RATE;
+    // Constructor that accepts a value in miles
+    public RewardValue(int miles) {
+        this.miles = miles;
+        this.cash = miles * MCRate;
     }
 
- 
+    // Method to get the cash value
     public double getCashValue() {
-        return cashValue;
+        return this.cash;
     }
 
-   
+    // Method to get the miles value
     public double getMilesValue() {
-        return milesValue;
+        return this.miles;
     }
 }
