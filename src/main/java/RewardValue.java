@@ -1,7 +1,5 @@
-import java.text.DecimalFormat;
-
 public class RewardValue {
-    private double cashValue, milesValue;
+    private double cashValue;
     private static final double MILES_TO_CASH = 0.0035;
 
     public RewardValue(double cashValue) {
@@ -9,7 +7,7 @@ public class RewardValue {
     }
 
     public RewardValue(int milesValue){
-        this.milesValue = milesValue;
+        this.cashValue = convertToCash(milesValue);
     }
 
     public double getCashValue() {
@@ -17,7 +15,7 @@ public class RewardValue {
     }
 
     public double getMilesValue() {
-        return Double.parseDouble(new DecimalFormat("#.000").format(milesValue*MILES_TO_CASH));
+        return convertToMiles(this.cashValue);
     }
 
     public static int convertToMiles(double cashValue) {
