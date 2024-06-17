@@ -1,5 +1,19 @@
 import java.util.Scanner;
 
+class RewardValue {
+    double cashValue;
+
+    // Constructor to initialize cashValue
+    public RewardValue(double cashValue) {
+        this.cashValue = cashValue;
+    }
+
+    // Method to convert cashValue to miles
+    public double getMilesValue() {
+        return cashValue * 100;  // Assuming 1 dollar = 100 miles
+    }
+}
+
 public class RewardsConverter {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
@@ -13,8 +27,8 @@ public class RewardsConverter {
             System.out.println("Could not parse input value as a double, exiting");
             return;
         }
-        System.out.println("converting $" + input_value + " to miles");
-        var rewardsValue = new RewardValue(cashValue);
-        System.out.println("$" + input_value + " is worth " + rewardsValue.getMilesValue() + " miles");
+        System.out.println("Converting $" + input_value + " to miles");
+        var rewardValue = new RewardValue(cashValue);
+        System.out.println("$" + input_value + " is worth " + rewardValue.getMilesValue() + " miles");
     }
 }
