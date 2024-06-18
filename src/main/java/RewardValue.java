@@ -18,7 +18,7 @@ public class RewardValue {
         return (int) (cashValue / CONVERSION_RATE);
     }
 
-    public static double getCashValue() {
+    public double getCashValue() {
         return cashVal;
     }
 
