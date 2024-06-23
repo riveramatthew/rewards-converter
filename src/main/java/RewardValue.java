@@ -22,6 +22,6 @@ public class RewardValue {
     }
 
     public double getMilesValue() {
-        return milesValue;
+        return (int) milesValue;
     }
 }
