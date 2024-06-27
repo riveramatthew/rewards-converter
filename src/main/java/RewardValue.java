@@ -1,7 +1,7 @@
 public class RewardValue {
     private double cashValue;
     private double milesValue;
-    public static final double CONVERSION_RATE = 0.1; // Example conversion rate: 1 dollar = 10 miles
+    public static final double CONVERSION_RATE = 0.0035;
 
     // Constructor for cash value
     public RewardValue(double cashValue) {
