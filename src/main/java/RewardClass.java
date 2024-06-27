@@ -1,60 +1,28 @@
 public class RewardClass {
+    private double cashValue;
+    private int milesValue;
 
-    private RewardValue rewardValue;
-
-    public RewardClass(Double cashValue) {
-        this.rewardValue = new RewardValue(cashValue);
+    public RewardClass(double cashValue) {
+        this.cashValue = cashValue;
     }
 
-    public RewardClass(Integer milesValue) {
-        this.rewardValue = new RewardValue(milesValue);
+    public RewardClass(int milesValue) {
+        this.milesValue = milesValue;
     }
 
     public double getCashValue() {
-        return rewardValue.getCashValue();
+        return cashValue;
     }
 
     public int getMilesValue() {
-        return rewardValue.getMilesValue();
+        return milesValue;
     }
 
-    private static class RewardValue {
+    public int convertToMiles() {
+        return (int) (cashValue * 100); // assuming 1 cash unit = 100 miles
+    }
 
-        private static final double CONVERSION_RATE = 0.0035;
-
-        private Double cashValue;
-        private Integer milesValue;
-
-        private RewardValue(Double cashValue) {
-            if (cashValue == null) {
-                throw new IllegalArgumentException("Cash value cannot be null");
-            }
-            this.cashValue = cashValue;
-            this.milesValue = null;
-        }
-
-        private RewardValue(Integer milesValue) {
-            if (milesValue == null) {
-                throw new IllegalArgumentException("Miles value cannot be null");
-            }
-            this.cashValue = null;
-            this.milesValue = milesValue;
-        }
-
-        public double getCashValue() {
-            if (cashValue!= null) {
-                return cashValue;
-            } else {
-                return milesValue * CONVERSION_RATE;
-            }
-        }
-
-        public int getMilesValue() {
-            if (milesValue!= null) {
-                return milesValue;
-            } else {
-                return (int) Math.round(cashValue / CONVERSION_RATE);
-            }
-        }
+    public double convertToCash() {
+        return milesValue / 100.0; // assuming 100 miles = 1 cash unit
     }
 }
