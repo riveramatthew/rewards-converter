@@ -1,30 +1,80 @@
+package ForageIntern;
+
+import java.util.Scanner;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+class Rewardsconverter {
+    public static void main(String[] args) {
+        var scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Credit Card Rewards Converter!");
+        System.out.println("Please enter a cash value to convert to airline miles: ");
+        var input_value = scanner.nextLine();
+        double cashValue;
+        try {
+            cashValue = Double.parseDouble(input_value);
+        } catch (NumberFormatException exception) {
+            System.out.println("Could not parse input value as a double, exiting");
+            return;
+        }
+        System.out.println("Converting $" + input_value + " to miles");
+        var rewardsValue = new RewardValue(cashValue);
+        System.out.println("$" + input_value + " is worth " + rewardsValue.getMilesValue() + " miles");
+    }
+}
 
-public class RewardValueTests {
+class RewardValue {
+    private double cashValue;
+    private double milesValue;
+    private static final double MILES_TO_CASH_RATE = 0.0035;
+
+    public RewardValue(double cashValue) {
+        this.cashValue = cashValue;
+        this.milesValue = cashValue / MILES_TO_CASH_RATE;
+    }
+
+    public RewardValue(int milesValue) {
+        this.milesValue = milesValue;
+        this.cashValue = milesValue * MILES_TO_CASH_RATE;
+    }
+
+    public double getCashValue() {
+        return cashValue;
+    }
+
+    public double getMilesValue() {
+        return milesValue;
+    }
+}
+
+
+class RewardValueTests {
 
     @Test
-    void create_with_cash_value() {
-        double cashValue = 100;
-        var rewardValue = new RewardValue(cashValue);
-        assertEquals(cashValue, rewardValue.getCashValue());
+    void testCashToMilesConversion() {
+        double cashValue = 100.0;
+        RewardValue reward = new RewardValue(cashValue);
+        double expectedMiles = cashValue / 0.0035;
+        assertEquals(expectedMiles, reward.getMilesValue(), 0.001);
     }
 
     @Test
-    void create_with_miles_value() {
-        int milesValue = 10000;
-        var rewardValue = new RewardValue(milesValue);
-        assertEquals(milesValue, rewardValue.getMilesValue());
+    void testMilesToCashConversion() {
+        int milesValue = 1000;
+        RewardValue reward = new RewardValue(milesValue);
+        double expectedCash = milesValue * 0.0035;
+        assertEquals(expectedCash, reward.getCashValue(), 0.001);
     }
 
     @Test
-    void convert_from_cash_to_miles() {
-        assert false;
+    void testGetCashValue() {
+        RewardValue reward = new RewardValue(100.0);
+        assertEquals(100.0, reward.getCashValue());
     }
 
     @Test
-    void convert_from_miles_to_cash() {
-        assert false;
+    void testGetMilesValue() {
+        RewardValue reward = new RewardValue(100.0);
+        assertEquals(100.0 / 0.0035, reward.getMilesValue(), 0.001);
     }
 }
