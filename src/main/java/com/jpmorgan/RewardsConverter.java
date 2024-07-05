@@ -1,3 +1,5 @@
+package com.jpmorgan;
+
 import java.util.Scanner;
 
 public class RewardsConverter {
@@ -13,7 +15,7 @@ public class RewardsConverter {
             System.out.println("Could not parse input value as a double, exiting");
             return;
         }
-        System.out.println("converting $" + input_value + " to miles");
+        System.out.println("Converting $" + input_value + " to miles");
         var rewardsValue = new RewardValue(cashValue);
         System.out.println("$" + input_value + " is worth " + rewardsValue.getMilesValue() + " miles");
     }
