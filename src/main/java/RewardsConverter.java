@@ -12,31 +12,40 @@ public class RewardsConverter {
             System.out.println("Could not parse input value as a double, exiting");
             return;
         }
-        System.out.println("Convegitagitrting $" + inputValue + " to miles");
+        System.out.println("Converting $" + inputValue + " to miles");
         RewardValue rewardsValue = new RewardValue(cashValue);
         System.out.println("$" + inputValue + " is worth " + rewardsValue.getMilesValue() + " miles");
     }
 }
 
 class RewardValue {
-    private double cashValue;
-    private double milesValue;
+    // Declare the fields
+    private Double cashValue;
 
-    public RewardValue(double cashValue) {
+    // Constructor
+    public RewardValue(Double cashValue) {
         this.cashValue = cashValue;
-        this.milesValue = convertToMiles(cashValue);
     }
 
-    private double convertToMiles(double cashValue) {
-        // Example conversion rate: 1 dollar = 100 miles
-        return cashValue * 0.0035;
+    public RewardValue(int milesValue) {
+        this.cashValue = MilestoCash(milesValue);
     }
-
-    public double getCashValue() {
+    // Getter for cash value
+    public Double getCashValue() {
         return cashValue;
     }
 
-    public double getMilesValue() {
-        return milesValue;
+    // Method to convert cash to miles
+    private Double cashToMiles(Double cashValue) {
+        return cashValue / 0.0035;
+    }
+
+    private Double MilestoCash(int milesValue) {
+        return milesValue * 0.0035;
+    }
+
+    // Getter for miles value
+    public Double getMilesValue() {
+        return cashToMiles(this.cashValue);
     }
 }
