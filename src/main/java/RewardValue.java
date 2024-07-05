@@ -20,7 +20,7 @@ public class RewardValue {
 
     // Method to convert from miles to cash at rate 0.0035
     private double convertMilesToCash(int miles) {
-        return miles * 0.0035;  // Conversion rate: 0.0035 dollars per mile
+        return miles * rate;  // Conversion rate: 0.0035 dollars per mile
     }
 
     // Getter method to return cash value
