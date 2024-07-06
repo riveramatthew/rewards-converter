@@ -17,14 +17,23 @@ public class RewardValueTests {
         var rewardValue = new RewardValue(milesValue);
         assertEquals(milesValue, rewardValue.getMilesValue());
     }
+@Test
+    public void testConvertMilesToCash() {
+        RewardValue rewardValue = new RewardValue();
 
+        assertEquals(0.0, rewardValue.convertMilesToCash(0), 0.0001);
+        assertEquals(0.35, rewardValue.convertMilesToCash(100), 0.0001);
+        assertEquals(3.5, rewardValue.convertMilesToCash(1000), 0.0001);
+        assertEquals(35.0, rewardValue.convertMilesToCash(10000), 0.0001);
+    }
     @Test
-    void convert_from_cash_to_miles() {
-        assert false;
+    public void testConvertCashToMiles() {
+        RewardValue rewardValue = new RewardValue();
+
+        assertEquals(0.0, rewardValue.convertCashToMiles(0), 0.0001);
+        assertEquals(28571.4286, rewardValue.convertCashToMiles(100), 0.0001);
+        assertEquals(285714.2857, rewardValue.convertCashToMiles(1000), 0.0001);
+        assertEquals(2857142.8571, rewardValue.convertCashToMiles(10000), 0.0001);
     }
 
-    @Test
-    void convert_from_miles_to_cash() {
-        assert false;
-    }
 }
