@@ -5,7 +5,9 @@ public class RewardValue {
     int miles; // Miles value
     final double CONVERSION_RATE = 0.0035;
 
-
+    // Default Constructor
+    public RewardValue() {
+    }
     // Constructor that accepts cash value
     public RewardValue(double cash) {
         this.cash = cash;
@@ -19,12 +21,12 @@ public class RewardValue {
     }
 
     // Method to convert from miles to cash at rate 0.0035
-    private double convertMilesToCash(int miles) {
+    public double convertMilesToCash(int miles) {
         return (miles * CONVERSION_RATE);  // Conversion rate: 0.0035 dollars per mile
     }
 
     // Method to convert from cash to miles at rate 0.0035
-    private double convertCashToMiles(int cash) {
+    public double convertCashToMiles(int cash) {
         return (cash / CONVERSION_RATE);  // Conversion rate: 0.0035 dollars per mile
     }
 
