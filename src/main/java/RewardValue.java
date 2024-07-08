@@ -24,4 +24,14 @@ public class RewardValue {
     public int getMilesValue() {
         return milesValue;
     }
+
+    // Method to convert cash to miles
+    public int convertCashToMiles(double cashValue) {
+        return (int) (cashValue / 0.0035);
+    }
+
+    // Method to convert miles to cash
+    public double convertMilesToCash(int milesValue) {
+        return milesValue * 0.0035;
+    }
 }
