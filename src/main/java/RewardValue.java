@@ -22,7 +22,7 @@ public class RewardValue {
         return cashValue;
     }
 
-    // Method to get the miles value
+
     public int getMilesValue() {
         return milesValue;
     }
