@@ -5,21 +5,21 @@ public class RewardValue {
 
     public void setMiles(double milesValue) {
         miles = milesValue;
+        cash = milesValue * 0.0035;
     }
 
     public void setCash(double cashValue) {
         cash = cashValue;
+        miles = cashValue/0.0035;
     }
 
     public RewardValue(double cashValue) {
         setCash(cashValue);
-        setMiles(cashValue/0.0035);
 
     }
 
     public RewardValue(int milesValue){
         setMiles(milesValue);
-        setCash(milesValue*0.0035);
 
     }
 
