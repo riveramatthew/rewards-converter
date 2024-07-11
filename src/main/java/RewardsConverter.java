@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+// Try push
 public class RewardsConverter {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
