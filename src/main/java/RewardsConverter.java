@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import com.example.rewards.RewardValue;
 
 public class RewardsConverter {
     public static void main(String[] args) {
