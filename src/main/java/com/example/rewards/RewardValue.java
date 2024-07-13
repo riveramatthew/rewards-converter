@@ -2,7 +2,7 @@ package com.example.rewards;
 
 public class RewardValue {
     private static final double CASH_TO_MILES_RATE = 100.0; // Conversion rate: 1 dollar = 100 miles
-    private static final double MILES_TO_CASH_RATE = 0.0035;  // Conversion rate: 1 mile = 0.01 dollars
+    private static final double MILES_TO_CASH_RATE = 0.0035;  // Conversion rate: 1 mile = 0.0035 dollars
 
     private double cashValue;
     private double milesValue;
@@ -24,7 +24,7 @@ public class RewardValue {
         return cashValue;
     }
 
-    public double g from 0.01etMilesValue() {
+    public double getMilesValue() {
         return milesValue;
     }
 
