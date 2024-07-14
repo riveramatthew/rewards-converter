@@ -1,7 +1,7 @@
 public class RewardValue {
     private double cashValue;
     private int milesValue;
-    private static final double MILES_TO_CASH_CONVERSION_RATE = 0.01; // example rate
+    private static final double MILES_TO_CASH_CONVERSION_RATE = 0.0035; //
 
     // Constructor for cash value
     public RewardValue(double cashValue) {
@@ -30,19 +30,7 @@ public class RewardValue {
         return (int) (cashValue / MILES_TO_CASH_CONVERSION_RATE);
     }
 
-    // Convert from miles to cash
-    public double convertFromMilesToCash(int milesValue) {
-        return milesValue * MILES_TO_CASH_CONVERSION_RATE;
-    }
 
-    public static void main(String[] args) {
-        // Example usage
-        RewardValue cashReward = new RewardValue(100.0);
-        System.out.println("Cash value: " + cashReward.getCashValue());
-        System.out.println("Equivalent miles value: " + cashReward.getMilesValue());
-
-        RewardValue milesReward = new RewardValue(10000);
-        System.out.println("Miles value: " + milesReward.getMilesValue());
-        System.out.println("Equivalent cash value: " + milesReward.getCashValue());
-    }
 }
+
+
