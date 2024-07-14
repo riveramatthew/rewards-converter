@@ -30,7 +30,11 @@ public class RewardValue {
         return (int) (cashValue / MILES_TO_CASH_CONVERSION_RATE);
     }
 
+    // Convert from miles to cash
+    public double convertFromMilesToCash(int milesValue) {
+        return milesValue * MILES_TO_CASH_CONVERSION_RATE;
+    }
 
-}
+   }
 
 
