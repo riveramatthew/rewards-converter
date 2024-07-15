@@ -12,15 +12,15 @@ public class RewardValue {
         this.cashValue = milesToCash(milesValue);
     }
 
-    private double cashToMiles(double cashValue) {
+    public double cashToMiles(double cashValue) {
         return (int) cashValue / 0.0035;
     }
 
-    private double milesToCash(double milesValue) {
+    public double milesToCash(double milesValue) {
         return milesValue * 0.0035;
     }
 
-    private double getCashValue() {
+    public double getCashValue() {
         return cashValue;
     }
 
