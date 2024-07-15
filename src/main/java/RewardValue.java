@@ -9,14 +9,14 @@ public class RewardValue {
 
     public RewardValue(int milesValue) {
         this.milesValue = milesValue;
-        this.cashValue = milesToChash(milesValue);
+        this.cashValue = milesToCash(milesValue);
     }
 
     private double cashToMiles(double cashValue) {
         return cashValue / 0.0035;
     }
 
-    private double milesToChash(double milesValue) {
+    private double milesToCash(double milesValue) {
         return milesValue * 0.0035;
     }
 
