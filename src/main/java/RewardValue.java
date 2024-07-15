@@ -13,7 +13,7 @@ public class RewardValue {
     }
 
     private double cashToMiles(double cashValue) {
-        return cashValue / 0.0035;
+        return (int) cashValue / 0.0035;
     }
 
     private double milesToCash(double milesValue) {
