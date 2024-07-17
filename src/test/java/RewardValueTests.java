@@ -21,16 +21,16 @@ public class RewardValueTests {
     @Test
     void convert_from_cash_to_miles() {
         double cashValue = 100;
+        int milesvalue = (int) (cashValue / RewardValue.MilesToCash);
         var rewardValue = new RewardValue(cashValue);
-        double mile = rewardValue.getMilesValue();
-       // assertEquals(cashValue, mile );
+       assertEquals(milesvalue, rewardValue.getMilesValue() );
     }
 
     @Test
     void convert_from_miles_to_cash() {
         int milesValue = 10000;
+        double cashValue = milesValue * RewardValue.MilesToCash;
         var rewardValue = new RewardValue(milesValue);
-        double cash = rewardValue.getCashValue();
-        //assertEquals(milesValue, cash);
+        assertEquals(cashValue, rewardValue.getCashValue());
     }
 }
