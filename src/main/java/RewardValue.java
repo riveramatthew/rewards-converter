@@ -3,7 +3,6 @@
 public class RewardValue {
 
     private double cash;
-    private int milesValue;
 
     public RewardValue(double cashValue) {
         // TODO Auto-generated constructor stub
@@ -12,7 +11,15 @@ public class RewardValue {
 
     public RewardValue(int milesValue) {
         // TODO Auto-generated constructor stub
-        milesValue = milesValue;
+        cash = convertToCash(milesValue);
+    }
+
+    private static double convertToCash(int milesValue) {
+        return milesValue * 0.0035;
+    }
+
+    private static int convertToMiles(double cashValue) {
+        return (int) (cashValue / 0.0035);
     }
 
     public double getCashValue() {
@@ -20,8 +27,8 @@ public class RewardValue {
     }
 
     public int getMilesValue() {
-        milesValue = (int) (cash / (0.0035));
-        return milesValue;
+
+        return convertToMiles(cash);
     }
 
 }
