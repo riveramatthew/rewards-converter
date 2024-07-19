@@ -1,6 +1,6 @@
 public class RewardValue {
     private final double cashValue;
-    public static final double RATE = 0.0035;
+    public static double RATE = 0.0035;
 
     public RewardValue(double cashValue) {
         this.cashValue = cashValue;
