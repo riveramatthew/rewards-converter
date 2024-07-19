@@ -20,7 +20,7 @@ public class RewardValue {
     }
 
     public int getMilesValue() {
-        milesValue = (int) (cash * (0.0035));
+        milesValue = (int) (cash / (0.0035));
         return milesValue;
     }
 
