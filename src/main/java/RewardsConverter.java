@@ -33,7 +33,7 @@ public class RewardValue {
         return milesValue;
     }
 
-    // Example usage in main method
+   
 
 }
 
