@@ -24,7 +24,7 @@ class RewardValue {
     }
 
     public double getMilesValue() {
-        return cashValue * MILES_PER_DOLLAR;
+        return (int) (cashValue * MILES_PER_DOLLAR);
     }
 }
 
