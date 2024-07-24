@@ -1,5 +1,44 @@
 import java.util.Scanner;
 
+class RewardValue {
+    // Conversion rate constants
+    public static final double MILES_PER_DOLLAR = 1 / 0.0035;
+    public static final double DOLLARS_PER_MILE = 0.0035;
+
+    private final double cashValue;
+
+    // Constructor for cash value
+    public RewardValue(double cashValue) {
+        this.cashValue = cashValue;
+    }
+
+    // Constructor for miles value
+    public RewardValue(int milesValue) {
+        this.cashValue = convertToCash(milesValue);
+    }
+
+    // Converts cash to miles
+    private static int convertToMiles(double cashValue) {
+        return (int) Math.round(cashValue * MILES_PER_DOLLAR);
+    }
+
+    // Converts miles to cash
+    private static double convertToCash(int milesValue) {
+        return milesValue * DOLLARS_PER_MILE;
+    }
+
+    // Returns the cash value
+    public double getCashValue() {
+        return cashValue;
+    }
+
+    // Returns the miles value
+    public int getMilesValue() {
+        return convertToMiles(this.cashValue);
+    }
+}
+
+
 public class RewardsConverter {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
