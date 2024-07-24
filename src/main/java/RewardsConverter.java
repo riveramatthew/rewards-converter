@@ -2,19 +2,33 @@ import java.util.Scanner;
 
 public class RewardsConverter {
     public static void main(String[] args) {
-        var scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Credit Card Rewards Converter!");
+
+        // Converting cash to miles
         System.out.println("Please enter a cash value to convert to airline miles: ");
-        var input_value = scanner.nextLine();
+        String inputCashValue = scanner.nextLine();
         double cashValue;
         try {
-            cashValue = Double.parseDouble(input_value);
+            cashValue = Double.parseDouble(inputCashValue);
         } catch (NumberFormatException exception) {
             System.out.println("Could not parse input value as a double, exiting");
             return;
         }
-        System.out.println("converting $" + input_value + " to miles");
-        var rewardsValue = new RewardValue(cashValue);
-        System.out.println("$" + input_value + " is worth " + rewardsValue.getMilesValue() + " miles");
+        RewardValue rewardsValueFromCash = new RewardValue(cashValue);
+        rewardsValueFromCash.displayMilesValue();
+
+        // Converting miles to cash
+        System.out.println("Please enter a miles value to convert to cash: ");
+        String inputMilesValue = scanner.nextLine();
+        int milesValue;
+        try {
+            milesValue = Integer.parseInt(inputMilesValue);
+        } catch (NumberFormatException exception) {
+            System.out.println("Could not parse input value as an integer, exiting");
+            return;
+        }
+        RewardValue rewardsValueFromMiles = new RewardValue(milesValue);
+        rewardsValueFromMiles.displayCashValue();
     }
 }
