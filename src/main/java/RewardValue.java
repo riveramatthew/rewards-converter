@@ -1,0 +1,46 @@
+public class RewardValue {
+    private double cashValue;
+    private double milesValue;
+
+    private static final double MILES_TO_CASH_CONVERSION_RATE = 0.0035;
+
+    // Constructor that accepts a cash value
+    public RewardValue(double cashValue) {
+        this.cashValue = cashValue;
+        this.milesValue = cashValue / MILES_TO_CASH_CONVERSION_RATE;
+    }
+
+    // Constructor that accepts a value in miles
+    public RewardValue(double milesValue, boolean isMiles) {
+        if (isMiles) {
+            this.milesValue = milesValue;
+            this.cashValue = milesValue * MILES_TO_CASH_CONVERSION_RATE;
+        } else {
+            this.cashValue = milesValue;
+            this.milesValue = milesValue / MILES_TO_CASH_CONVERSION_RATE;
+        }
+    }
+
+    // Method to get the cash value
+    public double getCashValue() {
+        return cashValue;
+    }
+
+    // Method to get the miles value
+    public double getMilesValue() {
+        return milesValue;
+    }
+
+    /*
+    // Main method for testing purposes
+    public static void main(String[] args) {
+        RewardValue rewardCash = new RewardValue(100);
+        System.out.println("Cash value: $" + rewardCash.getCashValue());
+        System.out.println("Miles value: " + rewardCash.getMilesValue() + " miles");
+
+        RewardValue rewardMiles = new RewardValue(20000, true);
+        System.out.println("Cash value: $" + rewardMiles.getCashValue());
+        System.out.println("Miles value: " + rewardMiles.getMilesValue() + " miles");
+    }
+    */
+}
