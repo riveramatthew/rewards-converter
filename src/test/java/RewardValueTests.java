@@ -28,9 +28,9 @@ public class RewardValueTests {
 
     @Test
     void convert_from_miles_to_cash() {
-        int milesValue = 10000;
-        var rewardValue=new RewardValue(milesValue);
-        assertEquals(milesValue, rewardValue.getMilesValue());
+        int miles = 10000;
+        var rewardValue=new RewardValue(miles);
+        assertEquals(miles, rewardValue.getMilesValue());
 
     }
 }
