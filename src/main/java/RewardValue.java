@@ -10,7 +10,7 @@ public class RewardValue {
     public RewardValue(double cashValue) {
         this.cashValue = cashValue;
         this.isCash = true;
-        this.milesValue = cashValueToMiles(cashValue);
+        this.milesValue = convertCashToMiles(cashValue);
     }
 
     // Constructor for miles value
@@ -18,20 +18,20 @@ public class RewardValue {
         if (isMiles) {
             this.milesValue = milesValue;
             this.isCash = false;
-            this.cashValue = milesValueToCash(milesValue);
+            this.cashValue = convertMilesToCash(milesValue);
         } else {
             throw new IllegalArgumentException("The second parameter must be true for miles value.");
         }
     }
 
     // Converts cash value to miles
-    private double cashValueToMiles(double cashValue) {
+    double convertCashToMiles(double cashValue) {
         double CASH_TO_MILES_RATE = 0.5;
         return cashValue * CASH_TO_MILES_RATE;
     }
 
     // Converts miles value to cash
-    private double milesValueToCash(double milesValue) {
+    private double convertMilesToCash(double milesValue) {
         return milesValue * MILES_TO_CASH_RATE;
     }
 
@@ -40,14 +40,14 @@ public class RewardValue {
         if (isCash) {
             return cashValue;
         } else {
-            return milesValueToCash(milesValue);
+            return convertMilesToCash(milesValue);
         }
     }
 
     // Returns the miles value of the RewardValue
     public double getMilesValue() {
         if (isCash) {
-            return cashValueToMiles(cashValue);
+            return convertCashToMiles(cashValue);
         } else {
             return milesValue;
         }
