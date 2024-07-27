@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class RewardValue{
+class RewardValue {
     private double cashValue;
     private double milesValue;
     private static final double MILES_TO_CASH_CONVERSION_RATE = 0.0035;
@@ -17,7 +17,7 @@ class RewardValue{
             this.milesValue = milesValue;
             this.cashValue = milesValue * MILES_TO_CASH_CONVERSION_RATE;
         } else {
-            // If not miles, it could be treated as a cash value
+            // Handle this case if milesValue is actually cash
             this.cashValue = milesValue;
             this.milesValue = cashValue / MILES_TO_CASH_CONVERSION_RATE;
         }
@@ -32,7 +32,6 @@ class RewardValue{
     public double getMilesValue() {
         return milesValue;
     }
-
 }
 
 public class RewardsConverter {
@@ -52,4 +51,6 @@ public class RewardsConverter {
         var rewardsValue = new RewardValue(cashValue);
         System.out.println("$" + input_value + " is worth " + rewardsValue.getMilesValue() + " miles");
     }
+
+    
 }
