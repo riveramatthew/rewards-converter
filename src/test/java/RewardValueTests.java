@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RewardValueTests {
@@ -20,11 +19,19 @@ public class RewardValueTests {
 
     @Test
     void convert_from_cash_to_miles() {
-        assert false;
+        double cashValue = 100;
+        var rewardValue = new RewardValue(cashValue);
+        double expectedMiles = cashValue / 0.0035;
+        double delta = 0.01; // Tolerance value for floating-point comparison
+        assertEquals(expectedMiles, rewardValue.getMilesValue(), delta);
     }
 
     @Test
     void convert_from_miles_to_cash() {
-        assert false;
+        int milesValue = 10000;
+        var rewardValue = new RewardValue(milesValue);
+        double expectedCash = milesValue * 0.0035;
+        double delta = 0.0001; // Tolerance value for floating-point comparison
+        assertEquals(expectedCash, rewardValue.getCashValue(), delta);
     }
 }
