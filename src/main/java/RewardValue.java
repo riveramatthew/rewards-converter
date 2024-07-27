@@ -1,7 +1,7 @@
 public class RewardValue {
     private double cash;
     private double miles;
-    private double exchangeRateMilesToCash = 0035;
+    private double exchangeRateMilesToCash = 0.0035;
 
     RewardValue(double cash) {
         this.cash = cash;
