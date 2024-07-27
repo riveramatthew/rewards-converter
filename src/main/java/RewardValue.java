@@ -1,16 +1,3 @@
-/* 
-public class RewardValue {
-    private double cashValue;
-    private double miles;
-    public RewardValue(double cashValue){
-        this.cashValue=cashValue;
-    }
-    public RewardValue(var miles){
-        this.miles=miles;
-    }
-}
-*/
-
 public class RewardValue {
     private double cashValue;
     private double milesValue;
