@@ -14,7 +14,7 @@ public class RewardValue {
     }
 
     // Constructor that accepts a value in miles
-    public RewardValue(double milesValue) {
+    public RewardValue(int milesValue) {
         this.milesValue = milesValue;
         this.cashValue = convertMilesToCash(milesValue);  // Convert miles to cash
     }
