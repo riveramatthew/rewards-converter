@@ -1,5 +1,6 @@
 public class RewardValue {
 
+    final double MILES_TO_CASH_RATE = 0.0035;
     int m;
     double c;
 
@@ -12,15 +13,25 @@ public class RewardValue {
     // This constructor will accept miles values
     public RewardValue(int miles){
         super();
-        this.m = miles;
+        this.c = convertToCash(miles);
+    }
+
+    private double convertToCash(int miles){
+        c = miles * MILES_TO_CASH_RATE;
+        return c;
+    }
+
+    private int convertToMiles(double cash){
+        m = (int)(cash / MILES_TO_CASH_RATE);
+        return m;
     }
 
     public double getCashValue(){
-        return m * 0.0035;
+        return c;
     }
 
-    public double getMilesValue(){
-        return c / 0.0035;
+    public int getMilesValue(){
+        return convertToMiles(c);
     }
 
 }
