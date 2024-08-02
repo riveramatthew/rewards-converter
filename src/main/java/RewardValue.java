@@ -1,46 +1,29 @@
 public class RewardValue {
     private double cash;
-    private int miles;
+    private final double convert_value = 0.0035;
 
     public RewardValue(){
         this.cash = 0;
-        this.miles = 0;
     }
-    public RewardValue( double cash){
+    public RewardValue(double cash){
         this.cash = cash;
     }
-    public RewardValue( int miles){
-        this.miles = miles;
+    public RewardValue(int cash){
+        this.cash = (cash/convert_value);
     }
 
     public double getCashValue(){
         return this.cash;
     }
     public double getMilesValue(){
-        return this.cash * 0.0035;
-    }
-
-    public double getCash() {
-        return cash;
-    }
-
-    public void setCash(double cash) {
-        this.cash = cash;
-    }
-
-    public int getMiles() {
-        return miles;
-    }
-
-    public void setMiles(int miles) {
-        this.miles = miles;
+        return this.cash*convert_value;
     }
 
     @Override
     public String toString() {
         return "RewardValue{" +
                 "cash=" + cash +
-                ", miles=" + miles +
+                ", convert_value=" + convert_value +
                 '}';
     }
 }
