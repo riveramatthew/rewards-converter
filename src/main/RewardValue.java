@@ -11,7 +11,7 @@ public class RewardValue {
     piblic RewardValue (double milesValue, boolean isMiles) {
         if (isMiles) {
             this.milesValue = milesValue;
-            this,cashValue = milesValue * MILES_TO_Cash_Rate;
+            this.cashValue = milesValue * MILES_TO_Cash_Rate;
 
         }
         public double getCashValue() {
