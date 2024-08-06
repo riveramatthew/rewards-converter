@@ -26,4 +26,16 @@ public class RewardValue {
     public double getMilesValue() {
         return milesValue;
     }
+    
+    
+    public double convert_from_cash_to_miles(double cashValue) {
+    	milesValue = cashValue/MILES_TO_CASH_RATE;
+    	
+		return milesValue;
+    	
+    }
+    public double convert_from_miles_to_cash(double milesValue) {
+    	cashValue = milesValue*MILES_TO_CASH_RATE;
+    	return cashValue;
+    }
 }
